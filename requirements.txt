@@ -28,7 +28,6 @@ wget
 wheel
 umongo
 humanize
-flask
 
 # Master Dependencies
 PyLeaves==1.0.2
