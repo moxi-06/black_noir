@@ -37,6 +37,25 @@ botStartTime = time.time()
 ppath = "plugins/*.py"
 files = glob.glob(ppath)
 
+import threading
+import requests
+
+def keep_alive():
+    urls = [
+        "https://scornful-andreana-moxi35-c66f799a.koyeb.app/"  # Replace with your second bot's URL
+    ]
+    
+    while True:
+        for url in urls:
+            try:
+                requests.get(url)
+            except:
+                pass
+        time.sleep(90)  # Ping every 90 seconds
+
+threading.Thread(target=keep_alive, daemon=True).start()
+
+
 async def Lucy_start():
     print('\n')
     print('\nInitalizing Lucy')
